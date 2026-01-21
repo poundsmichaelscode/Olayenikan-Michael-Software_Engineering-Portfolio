@@ -64,7 +64,7 @@ const About = () => {
                   loading="lazy"
                   onError={(e) => {
                     // Fallback to placeholder if image doesn't exist
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face";
+                    e.currentTarget.src = "/favicon.io.svg";
                   }}
                 />
               </div>
