@@ -58,13 +58,14 @@ const About = () => {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-accent opacity-20 blur-xl" />
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-primary/20 shadow-lg">
                 <img
-                  src="/profile.jpg"
+                  src="/IMG-20220123-WA0007-removebg (4).png"
+                  
                   alt="Profile photo"
                   className="w-full h-full object-cover"
                   loading="lazy"
                   onError={(e) => {
                     // Fallback to placeholder if image doesn't exist
-                    e.currentTarget.src = "/favicon.io.svg";
+                    e.currentTarget.src = "#";
                   }}
                 />
               </div>

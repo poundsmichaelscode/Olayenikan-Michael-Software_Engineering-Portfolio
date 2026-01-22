@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Send, Mail, MessageCircle, MapPin, Github, Linkedin, Twitter, Instagram, Youtube, CheckCircle, AlertCircle } from "lucide-react";
 
-const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; //Formspree endpoint
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID"; // Replace with your Formspree endpoint
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 

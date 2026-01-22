@@ -26,7 +26,7 @@ const Footer = () => {
               <span className="gradient-text">&lt;Dev/&gt;</span>
             </a>
             <p className="text-sm text-muted-foreground">
-              A Software Engineer & Blockchain Developer building secure, scalable solutions.
+              Full-Stack Engineer & Blockchain Developer building secure, scalable solutions.
             </p>
           </div>
 
@@ -63,10 +63,10 @@ const Footer = () => {
         {/* Bottom bar */}
         <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear}Olayenikan Michael Developer Portfolio. All rights reserved.
+            © {currentYear} Olayenikan Michael Developer Portfolio. All rights reserved Poundsmichaels Digitals.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-4 h-4 text-destructive fill-destructive" /> using React NextJS & TypeScript
+            Built with <Heart className="w-4 h-4 text-destructive fill-destructive" /> using React,NextJS & TypeScript
           </p>
         </div>
       </div>

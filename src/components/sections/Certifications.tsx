@@ -4,34 +4,34 @@ import { Badge } from "@/components/ui/badge";
 
 const certifications = [
   {
-    title: " Cyber security",
-    issuer: "Coursera",
+    title: "AWS Certified Solutions Architect",
+    issuer: "Amazon Web Services",
     date: "2024",
-    credentialUrl: "#",
-    category: "Security",
+    credentialUrl: "https://aws.amazon.com/certification/",
+    category: "Cloud",
     badge: "Professional",
   },
   {
-    title: "ALX Prodev, Frontend and Backend",
-    issuer: "ALX",
-    date: "2025",
-    credentialUrl: "#",
-    category: "Developer",
+    title: "Certified Kubernetes Administrator",
+    issuer: "Cloud Native Computing Foundation",
+    date: "2024",
+    credentialUrl: "https://www.cncf.io/certification/cka/",
+    category: "DevOps",
     badge: "CKA",
   },
   {
-    title: "Full Stack Developer",
+    title: "Certified Ethical Hacker (CEH)",
     issuer: "EC-Council",
     date: "2023",
     credentialUrl: "https://www.eccouncil.org/programs/certified-ethical-hacker-ceh/",
-    category: "Software enge",
+    category: "Security",
     badge: "CEH",
   },
   {
     title: "Meta Front-End Developer",
-    issuer: "ALX",
+    issuer: "Meta (Coursera)",
     date: "2023",
-    credentialUrl: "#",
+    credentialUrl: "https://www.coursera.org/professional-certificates/meta-front-end-developer",
     category: "Frontend",
     badge: "Professional",
   },
@@ -90,7 +90,7 @@ const categoryColors: Record<string, string> = {
 
 const Certifications = () => {
   return (
-    <section id="certifications" className="py-24 bg-muted/30">
+    <section id="certifications" className="py-24">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -113,16 +113,27 @@ const Certifications = () => {
 
         {/* Certifications Grid */}
         <div className="mb-16">
-          <motion.h3
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-xl font-semibold mb-6 flex items-center gap-2"
+            className="flex items-center justify-between mb-6"
           >
-            <Award className="w-5 h-5 text-primary" />
-            Professional Certifications
-          </motion.h3>
+            <h3 className="text-xl font-semibold flex items-center gap-2">
+              <Award className="w-5 h-5 text-primary" />
+              Professional Certifications
+            </h3>
+            <a
+              href="https://www.linkedin.com/in/yourprofile/details/certifications/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+            >
+              View More
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </motion.div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, index) => (
@@ -172,20 +183,32 @@ const Certifications = () => {
 
         {/* Online Courses */}
         <div>
-          <motion.h3
+          <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-xl font-semibold mb-6 flex items-center gap-2"
+            className="flex items-center justify-between mb-6"
           >
-            <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M12 14l9-5-9-5-9 5 9 5z" />
-              <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-              <path d="M12 14v7" />
-            </svg>
-            Professional Training & Courses
-          </motion.h3>
+            <h3 className="text-xl font-semibold flex items-center gap-2">
+              <svg className="w-5 h-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                <path d="M12 14v7" />
+              </svg>
+              Professional Training & Courses
+            </h3>
+            <a
+              href="https://www.linkedin.com/in/yourprofile/details/courses/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-sm text-primary hover:text-primary/80 transition-colors font-medium"
+            >
+              View More
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          </motion.div>
+          
           
           <div className="grid md:grid-cols-2 gap-4">
             {courses.map((course, index) => (

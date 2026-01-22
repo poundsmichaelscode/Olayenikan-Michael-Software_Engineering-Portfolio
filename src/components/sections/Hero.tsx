@@ -91,7 +91,7 @@ const Hero = () => {
               </a>
             </Button>
             <Button variant="ghost" size="lg" asChild>
-              <a href="#" download>
+              <a href="/resume.pdf" download>
                 <Download className="mr-1" />
                 Resume
               </a>
@@ -126,6 +126,7 @@ const Hero = () => {
         </div>
       </div>
 
+     
     </section>
   );
 };
