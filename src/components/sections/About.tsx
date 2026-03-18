@@ -62,22 +62,22 @@ const About = () => {
                   alt="Profile photo"
                   className="w-full h-full object-cover"
                   loading="lazy"
-                  onError={(e) => {
-                    // Fallback to placeholder if image doesn't exist
-                    e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face";
-                  }}
+                  // onError={(e) => {
+                  //   // Fallback to placeholder if image doesn't exist
+                  //   e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face";
+                  // }}
                 />
               </div>
               {/* Decorative elements */}
               <motion.div
-                className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary"
-                animate={{ scale: [1, 1.2, 1] }}
-                transition={{ duration: 2, repeat: Infinity }}
+                // className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-blue-500"
+                // animate={{ scale: [1, 1.2, 1] }}
+                // transition={{ duration: 2, repeat: Infinity }}
               />
               <motion.div
-                className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-accent"
-                animate={{ scale: [1, 1.3, 1] }}
-                transition={{ duration: 2.5, repeat: Infinity }}
+                // className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-accent"
+                // animate={{ scale: [1, 1.3, 1] }}
+                // transition={{ duration: 2.5, repeat: Infinity }}
               />
             </motion.div>
 
