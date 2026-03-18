@@ -58,14 +58,13 @@ const About = () => {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-accent opacity-20 blur-xl" />
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-primary/20 shadow-lg">
                 <img
-                  src="/IMG-20220123-WA0007-removebg (4).png"
-                  
+                  src="/profile.jpg"
                   alt="Profile photo"
                   className="w-full h-full object-cover"
                   loading="lazy"
                   onError={(e) => {
                     // Fallback to placeholder if image doesn't exist
-                    e.currentTarget.src = "#";
+                    e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face";
                   }}
                 />
               </div>
@@ -90,7 +89,7 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  I'm Olayenikan Michael a Full-Stack Software Engineer with a deep passion for creating 
+                  I'm a Full-Stack Software Engineer with a deep passion for creating 
                   impactful digital experiences. With expertise spanning frontend and 
                   backend development, blockchain technology, and cybersecurity, I bring 
                   a holistic approach to every project.

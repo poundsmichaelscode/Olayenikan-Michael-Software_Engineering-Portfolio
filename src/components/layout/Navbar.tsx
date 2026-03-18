@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Certifications", href: "#certifications" },
   { label: "Blog", href: "#blog" },
@@ -36,7 +37,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="text-xl font-bold font-heading">
-            <span className="gradient-text">&lt;Olayenikan MIchael/&gt;</span>
+            <span className="gradient-text">&lt;Olayenikan Michael/&gt;</span>
           </a>
 
           {/* Desktop navigation */}
