@@ -58,7 +58,7 @@ const About = () => {
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary to-accent opacity-20 blur-xl" />
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-primary/20 shadow-lg">
                 <img
-                  src="/profile.jpg"
+                  src="/public/profile-picture.jpg"
                   alt="Profile photo"
                   className="w-full h-full object-cover"
                   loading="lazy"

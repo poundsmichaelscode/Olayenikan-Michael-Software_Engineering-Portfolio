@@ -8,9 +8,9 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+  { icon: Github, href: "https://github.com/poundsmichaelscode", label: "GitHub" },
+  { icon: Linkedin, href: "https://linkedin.com/olayenikan-michael", label: "LinkedIn" },
+  { icon: Twitter, href: "https://twitter.com/poundsmichaels", label: "Twitter" },
 ];
 
 const Footer = () => {
@@ -23,10 +23,10 @@ const Footer = () => {
           {/* Logo and description */}
           <div>
             <a href="#" className="text-xl font-bold font-heading inline-block mb-3">
-              <span className="gradient-text">&lt;Dev/&gt;</span>
+              <span className="gradient-text">&lt;Olayenikan Michael/&gt;</span>
             </a>
             <p className="text-sm text-muted-foreground">
-              Full-Stack Engineer & Blockchain Developer building secure, scalable solutions.
+              Software Engineer  building secure, scalable solutions.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ const Footer = () => {
             © {currentYear} Developer Portfolio. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-4 h-4 text-destructive fill-destructive" /> using React & TypeScript
+            Built with <Heart className="w-4 h-4 text-destructive fill-destructive" /> Pounds Michaels Digitals
           </p>
         </div>
       </div>

@@ -12,6 +12,8 @@ const navLinks = [
   { label: "Certifications", href: "#certifications" },
   { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
+  { label: "Agency", href: "https://pounds-michaels-brand-website.vercel.app/" },
+
 ];
 
 const Navbar = () => {
