@@ -57,12 +57,12 @@ const About = () => {
             >
               <div className="relative w-full h-full rounded-2xl overflow-hidden border-2 border-primary/20 shadow-lg">
                 <img
-                  src="/profile.jpg"
+                  src="/profile_image.png"
                   alt="Olayenikan Michael"
                   className="w-full h-full object-cover"
                   loading="lazy"
                   onError={(e) => {
-                    e.currentTarget.src = "/public/profile_image.png";
+                    e.currentTarget.src = "/profile_image.png";
                   }}
                 />
               </div>
