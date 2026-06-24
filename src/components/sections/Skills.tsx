@@ -3,27 +3,27 @@ import { motion } from "framer-motion";
 const skillCategories = [
   {
     title: "Languages",
-    skills: ["JavaScript", "TypeScript", "Python", "Solidity", "Cairo", "Rust", "SQL"],
+    skills: ["JavaScript", "TypeScript", "Python", "SQL", "HTML/CSS", ],
   },
   {
     title: "Frontend",
-    skills: ["React", "Next.js", "Vue.js", "Tailwind CSS", "Framer Motion", "Redux"],
+    skills: ["React", "Next.js","React Native","Tailwind CSS", "Framer Motion", "Redux"],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express", "Django", "FastAPI", "GraphQL", "REST APIs"],
+    skills: ["Django", "FastAPI", "Node.js", "Express", "REST APIs", "GraphQL"],
   },
   {
-    title: "Blockchain",
-    skills: ["Ethereum", "Starknet", "Solana", "Web3.js", "Ethers.js", "Hardhat"],
+    title: "MERN Stack",
+    skills: ["MongoDB", "Express", "React", "Node.js","PostgreSQL"],
   },
   {
     title: "DevOps",
-    skills: ["Docker", "Kubernetes", "AWS", "GCP", "CI/CD", "Linux", "Nginx"],
+    skills: ["Docker", "CI/CD", "AWS","Azure", "Linux", "Nginx", "GitHub Actions", "Terraform", "Kubernetes",],
   },
   {
     title: "Security",
-    skills: ["OWASP", "Penetration Testing", "Secure Coding", "Burp Suite", "Wireshark"],
+    skills: ["OWASP", "Secure Coding", "Threat Detection", "Auth Systems"],
   },
   {
     title: "Databases",
@@ -49,7 +49,7 @@ const Skills = () => {
           <span className="text-primary font-medium mb-4 block">Skills & Technologies</span>
           <h2 className="section-heading">Tech Stack & Expertise</h2>
           <p className="section-subheading mx-auto">
-            A comprehensive toolkit spanning the full development spectrum, from user interfaces to blockchain infrastructure.
+            A comprehensive toolkit spanning frontend, backend, DevOps, and security.
           </p>
         </motion.div>
 

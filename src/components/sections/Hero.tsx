@@ -1,25 +1,19 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download, MessageCircle, Github, Linkedin, Twitter, Instagram, Youtube } from "lucide-react";
+import { ArrowRight, MessageCircle, Github, Linkedin, Twitter, Instagram } from "lucide-react";
+import ResumeDownloadButton from "@/components/ResumeDownloadButton";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter/X" },
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+  { icon: Github, href: "https://github.com/poundsmichaelscode", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/olayenikan-michael/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/PoundsMichael3", label: "Twitter/X" },
+  { icon: Instagram, href: "https://instagram.com/iam_poundsmichaels", label: "Instagram" },
 ];
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background gradient */}
-      <div 
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: "var(--gradient-hero)" }}
-      />
-      
-      {/* Floating elements */}
+      {/* Subtle floating shapes - no gradients */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
           className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-primary/5 blur-3xl"
@@ -46,8 +40,18 @@ const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
-            <span className="text-sm text-muted-foreground">Available for new opportunities</span>
+            <span className="text-sm text-muted-foreground">Available for new opportunities & remote roles</span>
           </motion.div>
+
+          {/* Name */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="text-lg sm:text-xl text-primary font-medium mb-4"
+          >
+            Olayenikan Michael
+          </motion.p>
 
           {/* Main headline */}
           <motion.h1
@@ -56,7 +60,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
           >
-            Full-Stack Engineer • AI Engineer • Mobile App Developer
+            Full-Stack Engineer • MERN • Django • FastAPI • DevOps 
           </motion.h1>
 
           {/* Subtitle */}
@@ -66,7 +70,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
           >
-            Crafting secure, scalable web and mobile applications end-to-end, with a focus on AI, DevOps, and cybersecurity-driven development.
+            Building scalable, production-ready web applications end-to-end — from pixel-perfect frontends to robust APIs and automated infrastructure.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -88,12 +92,7 @@ const Hero = () => {
                 Contact Me
               </a>
             </Button>
-            <Button variant="ghost" size="lg" asChild>
-              <a href="/resume.pdf" download>
-                <Download className="mr-1" />
-                Resume
-              </a>
-            </Button>
+            <ResumeDownloadButton />
           </motion.div>
 
           {/* Social links */}
@@ -125,7 +124,7 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
@@ -138,7 +137,7 @@ const Hero = () => {
         >
           <motion.div className="w-1.5 h-1.5 rounded-full bg-primary" />
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </section>
   );
 };

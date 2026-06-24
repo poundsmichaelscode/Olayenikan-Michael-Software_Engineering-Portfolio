@@ -81,11 +81,11 @@ const courses = [
 ];
 
 const categoryColors: Record<string, string> = {
-  Cloud: "bg-blue-500/20 text-blue-400 border-blue-500/30",
-  DevOps: "bg-purple-500/20 text-purple-400 border-purple-500/30",
-  Security: "bg-red-500/20 text-red-400 border-red-500/30",
-  Frontend: "bg-green-500/20 text-green-400 border-green-500/30",
-  Blockchain: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+  Cloud: "bg-accent/15 text-accent border-accent/30",
+  DevOps: "bg-primary/15 text-primary border-primary/30",
+  Security: "bg-destructive/15 text-destructive border-destructive/30",
+  Frontend: "bg-primary/15 text-primary border-primary/30",
+  Blockchain: "bg-accent/15 text-accent border-accent/30",
 };
 
 const Certifications = () => {

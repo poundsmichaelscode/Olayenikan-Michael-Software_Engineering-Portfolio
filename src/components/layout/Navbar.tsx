@@ -13,7 +13,6 @@ const navLinks = [
   { label: "Blog", href: "#blog" },
   { label: "Contact", href: "#contact" },
   { label: "Agency", href: "https://pounds-michaels-brand-website.vercel.app/" },
-
 ];
 
 const Navbar = () => {
@@ -24,7 +23,6 @@ const Navbar = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -37,12 +35,10 @@ const Navbar = () => {
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
-          {/* Logo */}
-          <a href="#" className="text-xl font-bold font-heading">
-            <span className="gradient-text">&lt;Olayenikan Michael/&gt;</span>
+          <a href="#" className="text-xl font-bold font-heading text-primary">
+            &lt;Olayenikan Michael/&gt;
           </a>
 
-          {/* Desktop navigation */}
           <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <a
@@ -55,11 +51,10 @@ const Navbar = () => {
             ))}
             <ThemeToggle />
             <Button variant="default" size="sm" asChild>
-              <a href="#contact">Hire Me</a>
+              <a href="#contact">Hire Me!</a>
             </Button>
           </div>
 
-          {/* Mobile menu button */}
           <div className="flex items-center gap-2 md:hidden">
             <ThemeToggle />
             <button
@@ -72,7 +67,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile navigation */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div

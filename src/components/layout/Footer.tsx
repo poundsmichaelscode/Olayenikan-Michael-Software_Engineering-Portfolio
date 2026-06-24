@@ -1,16 +1,18 @@
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram, Heart } from "lucide-react";
 
 const footerLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
+  { label: "Agency", href: "https://pounds-michaels-brand-website.vercel.app/" },
 ];
 
 const socialLinks = [
   { icon: Github, href: "https://github.com/poundsmichaelscode", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/olayenikan-michael", label: "LinkedIn" },
-  { icon: Twitter, href: "https://twitter.com/poundsmichaels", label: "Twitter" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/olayenikan-michael/", label: "LinkedIn" },
+  { icon: Twitter, href: "https://x.com/PoundsMichael3", label: "Twitter" },
+  { icon: Instagram, href: "https://instagram.com/iam_poundsmichaels", label: "Instagram" },
 ];
 
 const Footer = () => {
@@ -20,17 +22,15 @@ const Footer = () => {
     <footer className="border-t border-border bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-3 gap-8 items-center">
-          {/* Logo and description */}
           <div>
-            <a href="#" className="text-xl font-bold font-heading inline-block mb-3">
-              <span className="gradient-text">&lt;Olayenikan Michael/&gt;</span>
+            <a href="#" className="text-xl font-bold font-heading inline-block mb-3 text-primary">
+              &lt;Olayenikan Michael/&gt;
             </a>
             <p className="text-sm text-muted-foreground">
-              Software Engineer  building secure, scalable solutions.
+              Olayenikan Michael — Full-Stack Engineer building scalable, production-ready software.
             </p>
           </div>
 
-          {/* Quick links */}
           <div className="flex flex-wrap justify-center gap-6">
             {footerLinks.map((link) => (
               <a
@@ -43,7 +43,6 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* Social links */}
           <div className="flex justify-end gap-3">
             {socialLinks.map((social) => (
               <a
@@ -60,13 +59,12 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-8 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Developer Portfolio. All rights reserved.
+            © {currentYear} Olayenikan Michael. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
-            Built with <Heart className="w-4 h-4 text-destructive fill-destructive" /> Pounds Michaels Digitals
+            Digital Agency <Heart className="w-4 h-4 text-destructive fill-destructive" /> Pounds Michaels Code.
           </p>
         </div>
       </div>

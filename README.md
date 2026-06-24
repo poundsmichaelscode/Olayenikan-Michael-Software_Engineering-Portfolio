@@ -1,241 +1,73 @@
+# Welcome to your Lovable project
 
+## Project info
 
-# 👨🏾‍💻 Olayenikan Michael — Full-Stack Engineer | AI Engineer | Mobile App Developer
+**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
-🚀 Crafting secure, scalable web and mobile applications end-to-end, with a focus on **AI, DevOps, and cybersecurity-driven development**.
+## How can I edit this code?
 
-🔗 **Live Portfolio:**
-👉 [https://olayenikan-michael-software-enginee.vercel.app/](https://olayenikan-michael-software-enginee.vercel.app/)
+There are several ways of editing your application.
 
----
+**Use Lovable**
 
-## 📌 About Me
+Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
 
-I'm a **Full-Stack Software Engineer** passionate about building impactful digital experiences.
+Changes made via Lovable will be committed automatically to this repo.
 
-I specialize in:
+**Use your preferred IDE**
 
-* Scalable frontend & backend systems
-* AI-powered applications
-* Secure and performance-driven architectures
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-My journey in tech has evolved through:
+The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-* Building enterprise-grade applications
-* Developing decentralized (Web3) systems
-* Implementing security-first engineering practices
+Follow these steps:
 
-💡 I believe in writing **clean, maintainable, and scalable code** that stands the test of time.
+```sh
+# Step 1: Clone the repository using the project's Git URL.
+git clone <YOUR_GIT_URL>
 
----
+# Step 2: Navigate to the project directory.
+cd <YOUR_PROJECT_NAME>
 
-## 🛠️ Tech Stack
+# Step 3: Install the necessary dependencies.
+npm i
 
-### 💻 Languages
+# Step 4: Start the development server with auto-reloading and an instant preview.
+npm run dev
+```
 
-* JavaScript
-* TypeScript
-* Python
-* SQL
-* Solidity
+**Edit a file directly in GitHub**
 
+- Navigate to the desired file(s).
+- Click the "Edit" button (pencil icon) at the top right of the file view.
+- Make your changes and commit the changes.
 
-### 🎨 Frontend
+**Use GitHub Codespaces**
 
-* React.js
-* React Native
-* Next.js
-* Vue.js
-* Tailwind CSS
-* Redux
-* Framer Motion
+- Navigate to the main page of your repository.
+- Click on the "Code" button (green button) near the top right.
+- Select the "Codespaces" tab.
+- Click on "New codespace" to launch a new Codespace environment.
+- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-### ⚙️ Backend
+## What technologies are used for this project?
 
-* Node.js
-* Express.js
-* Django
-* FastAPI
-* GraphQL
-* REST APIs
+This project is built with:
 
-### 🔗 Blockchain
+- Vite
+- TypeScript
+- React
+- shadcn-ui
+- Tailwind CSS
 
-* Ethereum
-* Starknet
-* Solana
-* Ethers.js
-* Web3.js
-* Hardhat
+## How can I deploy this project?
 
-### ☁️ DevOps & Cloud
+Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
 
-* Docker
-* Kubernetes
-* AWS
-* GCP
-* CI/CD
-* Linux
-* Nginx
+## Can I connect a custom domain to my Lovable project?
 
-### 🔐 Cybersecurity
+Yes, you can!
 
-* OWASP
-* Penetration Testing
-* Secure Coding
-* Burp Suite
-* Wireshark
+To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-### 🗄️ Databases
-
-* PostgreSQL
-* MongoDB
-* Redis
-* Firebase
-* Supabase
-
----
-
-## 💼 Experience
-
-### 🧠 Senior Full-Stack Developer
-
-**GOA Tech Global (Remote)** | 2023 — Present
-
-* Led enterprise-scale application development
-* Migrated monolith to microservices
-* Improved performance by **60%**
-* Mentored junior developers
-* Built CI/CD pipelines
-
----
-
-### ⛓️ Blockchain Developer
-
-**WEB3 Bridge** | 2026 — 2026
-
-* Developed smart contracts handling **$10M+ TVL**
-* Conducted security audits
-* Reduced gas fees by **40%**
-* Built NFT marketplace
-
----
-
-### 🌐 Full-Stack Developer
-
-**Digital Solutions Agency freelanceing** | 2022 — till date
-
-* Delivered **20+ client projects**
-* Built real-time SaaS features
-* Integrated payment systems ($500K+ monthly)
-
----
-
-### 🧑🏾‍💻 Junior Developer
-
-**pantechsolutions** | 2020— 2021
-
-* Built responsive websites
-* Integrated APIs and payment systems
-* Contributed to open source
-
----
-
-## 🚀 Featured Projects
-
-### 🔗 DeFi Lending Protocol
-
-Decentralized lending platform with dynamic interest rates
-**Stack:** Solidity, React, Hardhat
-
----
-
-### 🤖 AI-Powered Document Assistant
-
-RAG-based document Q&A system with semantic search
-**Stack:** Python, LangChain, OpenAI
-
----
-
-### 🏠 Real Estate Platform
-
-Advanced property listing system with admin dashboard
-**Stack:** Next.js, Node.js, PostgreSQL
-
----
-
-### ⚙️ N8N Automation Hub
-
-AI-powered workflow automation system
-**Stack:** Node.js, OpenAI API
-
----
-
-### 🎓 EduHub (School Management System)
-
-Complete education management platform
-**Stack:** Django, React, PostgreSQL
-
----
-
-### 🛒 Full-Stack E-commerce
-
-End-to-end e-commerce platform with payments
-**Stack:** Next.js, Stripe, MongoDB
-
----
-
-## 📜 Certifications
-
-* 🏅 ALX ProDev Backend (2026)
-* 🏅 Alx ProDev Frontend (@026)
-* 🏅 Cyber Security (Cousera)
-* 🏅 Meta Frontend Developer Certification (Cousera)
-* 🏅 CompTIA Security+ ()
-* 🏅 Blockchain Developer Nanodegree (Web 3 Bridge)
-
----
-
-## ✍🏾 Technical Writing
-
-I share knowledge on:
-
-* Blockchain & Smart Contracts
-* Cybersecurity
-* DevOps
-* Backend Engineering
-
-📚 Topics include:
-
-* Smart Contract Security
-* Zero-Trust Architecture
-* Docker & CI/CD
-* API Security
-
----
-
-## 🤝 Let’s Work Together
-
-📩 **Email:** [hello@developer.com](mailto:poundsmichaels@g.com)
-🌍 **Location:** Remote / Worldwide
-💬 **WhatsApp:** Available
-
----
-
-## ⚡ Brand
-
-Built with ❤️ by **Pounds Michaels Digitals**
-
----
-
-## ⭐ Support
-
-If you like this project:
-
-* ⭐ Star this repo
-* 🔁 Share with others
-* 🤝 Connect with me
-
----
-
-
+Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
