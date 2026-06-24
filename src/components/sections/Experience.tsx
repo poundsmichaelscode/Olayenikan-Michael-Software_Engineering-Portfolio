@@ -4,12 +4,12 @@ import { Badge } from "@/components/ui/badge";
 
 const experiences = [
   {
-    title: "Senior Full-Stack Developer",
-    company: "TechCorp Global",
+    title: "Full-Stack Developer",
+    company: "GAO Tech",
     companyUrl: "https://example.com",
     location: "San Francisco, CA (Remote)",
-    period: "2023 - Present",
-    type: "Full-time",
+    period: "2025- Present",
+    type: "Remote",
     description:
       "Leading development of enterprise-scale web applications and mentoring junior developers. Architecting microservices and implementing CI/CD pipelines.",
     achievements: [
@@ -21,12 +21,12 @@ const experiences = [
     technologies: ["React", "Node.js", "AWS", "Docker", "PostgreSQL"],
   },
   {
-    title: "Blockchain Developer",
-    company: "Web3 Innovations",
+    title: "Frontend Engineer",
+    company: "Neddy Eye",
     companyUrl: "https://example.com",
-    location: "New York, NY",
-    period: "2022 - 2023",
-    type: "Full-time",
+    location: "Lagos, Nigeria (Remote)",
+    period: "2024 - 2024",
+    type: "Contract",
     description:
       "Developed and audited smart contracts for DeFi protocols. Built decentralized applications with focus on security and gas optimization.",
     achievements: [
@@ -39,10 +39,10 @@ const experiences = [
   },
   {
     title: "Full-Stack Developer",
-    company: "Digital Solutions Agency",
+    company: "Patche Solutions",
     companyUrl: "https://example.com",
     location: "Austin, TX",
-    period: "2020 - 2022",
+    period: "2023- 2024",
     type: "Full-time",
     description:
       "Delivered end-to-end web solutions for diverse clients ranging from startups to enterprises. Focused on scalable architectures and modern tech stacks.",
@@ -55,12 +55,12 @@ const experiences = [
     technologies: ["Next.js", "TypeScript", "MongoDB", "Redis", "Stripe"],
   },
   {
-    title: "Junior Web Developer",
-    company: "StartUp Hub",
+    title: "Network Engineer Intern",
+    company: "CVIT Nigeria",
     companyUrl: "https://example.com",
-    location: "Remote",
-    period: "2019 - 2020",
-    type: "Full-time",
+    location: "Lagos, Nigeria",
+    period: "2020-2020",
+    type: "Internship",
     description:
       "Started career building responsive websites and learning modern web development practices. Collaborated with designers and product teams.",
     achievements: [
