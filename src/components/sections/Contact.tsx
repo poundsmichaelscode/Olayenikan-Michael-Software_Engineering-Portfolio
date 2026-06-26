@@ -201,7 +201,7 @@ const Contact = () => {
                 )}
               </Button>
               <p className="text-xs text-muted-foreground text-center">
-                Your message will be sent via Formspree. I'll respond within 24-48 hours.
+                 I'll respond within 24 hours.
               </p>
             </form>
           </motion.div>
