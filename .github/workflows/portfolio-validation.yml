@@ -52,7 +52,7 @@ jobs:
       - name: Install application dependencies
         run: npm ci --no-audit --no-fund
       - name: Install test runner without modifying lockfile
-        run: npm install --no-save --package-lock=false --no-audit --no-fund @playwright/test@1.56.1
+        run: npm install --no-save --package-lock=false --no-audit --no-fund @playwright/test@1.56.1 @axe-core/playwright@4.11.0
       - name: Install Chromium and system dependencies
         run: npx playwright install --with-deps chromium
       - name: Build preview bundle
