@@ -35,6 +35,8 @@ jobs:
         run: npm test
       - name: Vite production build (artifact only; no deployment)
         run: npm run build
+      - name: Verify prerendered deployable HTML and Vercel route mapping
+        run: node scripts/verify-ssg-build.cjs
 
   browser-smoke:
     name: Chromium desktop and mobile smoke tests
