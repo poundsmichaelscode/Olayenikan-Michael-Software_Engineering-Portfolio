@@ -59,6 +59,25 @@ jobs:
         run: npm run build
       - name: Run browser smoke tests
         run: npx playwright test --config=playwright.config.cjs
+      - name: Verify route-specific HTML snapshots without JavaScript (proof of concept)
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4173 --strictPort > /tmp/portfolio-preview.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4173/ -o /dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/prerender-proof.cjs
+          node scripts/verify-prerender-proof.cjs
+      - name: Upload prerender proof pages
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prerender-proof
+          path: prerender-proof/
+          if-no-files-found: ignore
+          retention-days: 7
       - name: Install Lighthouse CI
         run: npm install --global @lhci/cli@0.16.x
       - name: Measure Lighthouse performance, accessibility, best practices and SEO
