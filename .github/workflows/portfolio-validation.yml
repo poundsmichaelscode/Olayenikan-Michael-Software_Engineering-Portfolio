@@ -4,6 +4,11 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      preview_url:
+        description: 'Optional Vercel branch preview URL to audit (never the production hostname)'
+        required: false
+        type: string
 
 permissions:
   contents: read
@@ -102,3 +107,22 @@ jobs:
             test-results/
           if-no-files-found: ignore
           retention-days: 7
+
+  audit-vercel-preview:
+    name: Audit explicitly provided Vercel preview URL
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.preview_url != '' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Inspect preview raw HTML and noindex metadata (no deployment)
+        env:
+          PREVIEW_URL: ${{ inputs.preview_url }}
+        run: node scripts/audit-vercel-preview.mjs
