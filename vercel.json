@@ -1,6 +1,46 @@
 {
   "rewrites": [
     {
+      "source": "/about",
+      "destination": "/about/index.html"
+    },
+    {
+      "source": "/projects",
+      "destination": "/projects/index.html"
+    },
+    {
+      "source": "/projects/routewell",
+      "destination": "/projects/routewell/index.html"
+    },
+    {
+      "source": "/projects/skillproof-api",
+      "destination": "/projects/skillproof-api/index.html"
+    },
+    {
+      "source": "/projects/api-gateway",
+      "destination": "/projects/api-gateway/index.html"
+    },
+    {
+      "source": "/projects/cloudpress-aws",
+      "destination": "/projects/cloudpress-aws/index.html"
+    },
+    {
+      "source": "/experience",
+      "destination": "/experience/index.html"
+    },
+    {
+      "source": "/education",
+      "destination": "/education/index.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
