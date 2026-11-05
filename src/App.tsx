@@ -28,7 +28,7 @@ const App = () => (
         <BrowserRouter>
           <PortfolioLayout>
             <RouteMetadata />
-            <Suspense fallback={<div className="section-container min-h-[40vh]" role="status" aria-live="polite">Loading page…</div>}>
+            <Suspense fallback={<div className="min-h-[calc(100vh-4rem)]" role="status" aria-live="polite"><div className="section-container"><span className="sr-only">Loading page…</span><div className="h-4 w-40 animate-pulse rounded bg-muted" aria-hidden="true" /><div className="mt-5 h-12 max-w-lg animate-pulse rounded bg-muted" aria-hidden="true" /><div className="mt-5 h-6 max-w-xl animate-pulse rounded bg-muted" aria-hidden="true" /></div></div>}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/projects" element={<ProjectsDirectory />} />
