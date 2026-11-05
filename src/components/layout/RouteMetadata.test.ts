@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getPageMeta, seoPages, SITE_ORIGIN } from "./RouteMetadata";
+import { getPageMeta, seoPages, SITE_ORIGIN } from "@/content/seo";
 import { engineeringProjects } from "@/content/engineeringProjects";
 
 describe("portfolio SEO metadata", () => {
