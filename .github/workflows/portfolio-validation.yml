@@ -35,3 +35,37 @@ jobs:
         run: npm test
       - name: Vite production build (artifact only; no deployment)
         run: npm run build
+
+  browser-smoke:
+    name: Chromium desktop and mobile smoke tests
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install application dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Install test runner without modifying lockfile
+        run: npm install --no-save --package-lock=false --no-audit --no-fund @playwright/test@1.56.1
+      - name: Install Chromium and system dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Build preview bundle
+        run: npm run build
+      - name: Run browser smoke tests
+        run: npx playwright test --config=playwright.config.cjs
+      - name: Upload traces and screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-smoke-diagnostics
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 7
