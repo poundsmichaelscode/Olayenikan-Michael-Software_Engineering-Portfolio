@@ -43,3 +43,12 @@ This document applies to branch `feat/portfolio-m1-foundation-design-system` onl
 4. Revalidate primary routes and contact methods after rollback.
 
 **No merge or production deployment is authorized by this checklist.**
+
+
+## Live preview HTTP audit — opt in, no deployment
+- [ ] Obtain the **exact branch-preview** `*.vercel.app` URL from the Vercel deployment details (the GitHub Vercel status link goes to a dashboard and is not itself the preview URL).
+- [ ] Run the preview audit manually against that URL, using either `PREVIEW_URL=https://<branch-preview>.vercel.app node scripts/audit-vercel-preview.mjs` or the `workflow_dispatch` `preview_url` input in the **development-branch** version of the Portfolio validation workflow.
+- [ ] The script intentionally rejects the canonical production hostname, asserts raw prerendered HTML for all 11 routes, and checks route titles, descriptions, canonical URLs, and non-production `noindex, nofollow`.
+- [ ] Keep Vercel deployment protection enabled. A protected preview may return 401/403 to a non-authenticated HTTP auditor; record this as a verification blocker, not permission to make the deployment public.
+- [ ] Test mobile/desktop screenshots, theme controls, network requests and any initial DOM remount in an authorized browser session; the HTTP audit does not replace that visual verification.
+- [ ] Do not treat a GitHub “Vercel success” status as proof that the preview responds correctly to public HTTP requests, that every rewrite is served correctly, or that content was visually reviewed.
