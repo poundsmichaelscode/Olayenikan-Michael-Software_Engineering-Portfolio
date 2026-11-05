@@ -49,26 +49,26 @@ export const historicalEngagements = [
   {
     organization: "Enoverlab / EduHive",
     position: "Backend Developer / DevOps Engineer",
-    period: "2025 (dates to confirm)",
+    period: "February–August 2025 (reported as six months)",
     overview: "Worked on backend services and containerized development workflows for the EduHive education technology platform.",
     contributions: [
       "Developed backend services with Node.js, TypeScript and Express.",
       "Worked with Docker-based application workflows and backend deployment concerns."
     ],
     stack: ["Node.js", "TypeScript", "Express", "Docker"],
-    verification: "Confirm employer naming, exact role, dates and responsibilities."
+    verification: "Month range supplied by portfolio owner; February–August spans seven calendar months inclusively, so duration should be confirmed."
   },
   {
     organization: "Moedify Agency",
     position: "Web Developer",
-    period: "2023–2026 (dates to confirm)",
+    period: "2023–2026",
     overview: "Web development work spanning websites and application interface delivery.",
     contributions: [
       "Contributed to website and frontend implementation.",
       "Worked with clients and evolving web development requirements."
     ],
     stack: ["Web Development", "Frontend"],
-    verification: "Confirm employment or contract arrangement, dates and scope."
+    verification: "Years supplied by portfolio owner; confirm employment or contract arrangement and scope."
   },
   {
     organization: "Pantech ProEd",
@@ -97,14 +97,14 @@ export const historicalEngagements = [
   {
     organization: "SON IT",
     position: "Network Support Intern",
-    period: "2021 (dates to confirm)",
+    period: "2021 (six months; specific months to confirm)",
     overview: "IT network support internship that developed foundational infrastructure and troubleshooting experience.",
     contributions: [
       "Supported networking and IT operations.",
       "Gained hands-on exposure to troubleshooting and infrastructure support."
     ],
     stack: ["Networking", "IT Support"],
-    verification: "Confirm organization naming and internship dates."
+    verification: "Six-month duration supplied by portfolio owner; clarify whether SEWIS is a programme or employer name and confirm exact months."
   },
   {
     organization: "CVIT Nigeria",
