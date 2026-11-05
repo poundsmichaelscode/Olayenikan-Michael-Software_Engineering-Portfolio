@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { PortfolioLayout } from "@/components/layout/PortfolioLayout";
+import { RouteMetadata } from "@/components/layout/RouteMetadata";
 import ProjectsDirectory from "./pages/ProjectsDirectory";
 import EngineeringCaseStudy from "./pages/EngineeringCaseStudy";
 import ExperiencePage from "./pages/ExperiencePage";
@@ -25,6 +26,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <PortfolioLayout>
+            <RouteMetadata />
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/projects" element={<ProjectsDirectory />} />
