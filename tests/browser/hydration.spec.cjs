@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
 
-test("prerendered routes hydrate without recoverable React errors", async ({ page }) => {
+test("prerendered routes initialize without React recovery errors", async ({ page }) => {
   const warnings = [];
   page.on("pageerror", (error) => warnings.push(error.message));
   page.on("console", (message) => {
@@ -17,7 +17,7 @@ test("prerendered routes hydrate without recoverable React errors", async ({ pag
   expect(warnings, "React hydration errors or page exceptions").toEqual([]);
 });
 
-test("prerendered projects page keeps its interactive filters after hydration", async ({ page }) => {
+test("prerendered projects page keeps working filters after client startup", async ({ page }) => {
   const errors = [];
   page.on("pageerror", (error) => errors.push(error.message));
   await page.goto("/projects");
