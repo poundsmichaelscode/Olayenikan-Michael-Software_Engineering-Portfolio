@@ -19,23 +19,23 @@ export default function ContactPage() {
           </p>
         </div>
       </header>
-      <section className="section-container grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]" aria-labelledby="channels-heading">
-        <div>
+      <section className="section-container grid min-w-0 grid-cols-1 gap-10 lg:grid-cols-[minmax(0,1fr)_320px]" aria-labelledby="channels-heading">
+        <div className="min-w-0">
           <div className="flex items-center gap-3">
             <MessageSquareText className="h-6 w-6 text-primary" aria-hidden="true" />
             <h2 id="channels-heading" className="font-heading text-2xl font-bold">Contact channels</h2>
           </div>
-          <div className="mt-7 grid gap-4">
+          <div className="mt-7 grid min-w-0 grid-cols-1 gap-4">
             {channels.map(({ title, detail, href, icon: Icon }) => (
               <a key={title} href={href} target={href.startsWith("https://") ? "_blank" : undefined}
                 rel={href.startsWith("https://") ? "noopener noreferrer" : undefined}
-                className="group flex items-center gap-4 rounded-xl border border-border bg-card p-5 transition hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border border-primary/25 bg-primary/10 text-primary">
+                className="group flex min-w-0 items-center gap-3 rounded-xl border border-border bg-card p-5 transition hover:border-primary/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-primary/25 bg-primary/10 text-primary">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <span className="min-w-0 flex-1">
                   <span className="block font-heading font-semibold">{title}</span>
-                  <span className="mt-1 block break-words text-sm text-muted-foreground">{detail}</span>
+                  <span className="mt-1 block [overflow-wrap:anywhere] text-sm text-muted-foreground">{detail}</span>
                 </span>
                 <ArrowUpRight className="h-5 w-5 shrink-0 text-primary" aria-hidden="true" />
               </a>
