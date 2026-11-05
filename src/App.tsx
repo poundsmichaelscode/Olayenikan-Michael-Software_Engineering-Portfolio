@@ -9,17 +9,13 @@ import ProjectsDirectory from "./pages/ProjectsDirectory";
 import EngineeringCaseStudy from "./pages/EngineeringCaseStudy";
 import ExperiencePage from "./pages/ExperiencePage";
 import EducationPage from "./pages/EducationPage";
+import AboutPage from "./pages/AboutPage";
+import BlogPage from "./pages/BlogPage";
+import ContactPage from "./pages/ContactPage";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import { SectionPreview } from "./pages/SectionPreview";
 
 const queryClient = new QueryClient();
-
-const pages = [
-  { path: "/about", title: "About", description: "My engineering background, approach to problem solving and technical strengths." },
-  { path: "/blog", title: "Engineering Writing", description: "Technical articles grounded in real software and infrastructure work." },
-  { path: "/contact", title: "Contact", description: "Get in touch about engineering roles, freelance projects and collaborations." },
-] as const;
 
 const App = () => (
   <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
@@ -35,7 +31,9 @@ const App = () => (
               <Route path="/projects/:slug" element={<EngineeringCaseStudy />} />
               <Route path="/experience" element={<ExperiencePage />} />
               <Route path="/education" element={<EducationPage />} />
-              {pages.map((page) => <Route key={page.path} path={page.path} element={<SectionPreview title={page.title} description={page.description} />} />)}
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/blog" element={<BlogPage />} />
+              <Route path="/contact" element={<ContactPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </PortfolioLayout>
