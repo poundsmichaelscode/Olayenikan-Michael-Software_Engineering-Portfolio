@@ -32,3 +32,10 @@ Do not merge or deploy without separately confirmed owner authorization. Before 
 3. Review Lighthouse scores over multiple samples and verify no layout flash after JavaScript mounts.
 4. Perform manual accessibility and screen-reader testing.
 5. Verify user career facts, public links and canonical domain.
+
+## Hydration experiment — deliberately not shipped (5 November 2026)
+A direct `hydrateRoot` experiment combined a common provider/route tree with eager page imports. TypeScript, unit tests and SSG output passed; the new Chromium regression check detected React recoverable hydration errors (minified errors 418 and 423) on both desktop and mobile. The server markup and browser tree do not yet match reliably. The experiment was reverted, retaining the already validated `createRoot` path, route-level code splitting and generated HTML.
+
+Do not switch to `hydrateRoot` by replacing one line. First isolate differences in the shared provider subtree (especially theme script injection, Radix portals and router markup), use non-minified React diagnostics, and assert zero recoverable errors for all 11 routes in both themes before considering hydration complete. Compare measured initial JS bundle and real browser UX to ensure a larger eager bundle does not undo previous performance improvements.
+
+The current release status remains **prerendered HTML for crawlers plus interactive React mounting after script load**, not full React hydration.
