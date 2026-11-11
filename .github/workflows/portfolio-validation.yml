@@ -66,6 +66,14 @@ jobs:
         run: npm run build
       - name: Run browser smoke tests
         run: npx playwright test --config=playwright.config.cjs
+      - name: Upload desktop and mobile visual-review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-visual-review
+          path: visual-review/
+          if-no-files-found: ignore
+          retention-days: 14
       - name: Verify route-specific HTML snapshots without JavaScript (proof of concept)
         run: |
           npm run preview -- --host 127.0.0.1 --port 4174 --strictPort > /tmp/portfolio-preview.log 2>&1 &
