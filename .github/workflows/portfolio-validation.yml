@@ -1,0 +1,136 @@
+name: Portfolio validation
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      preview_url:
+        description: 'Optional Vercel branch preview URL to audit (never the production hostname)'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-validation-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: Lint, typecheck, tests, build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Lint
+        run: npm run lint
+      - name: TypeScript check
+        run: npx tsc --project tsconfig.app.json --noEmit
+      - name: Unit tests
+        run: npm test
+      - name: Vite production build (artifact only; no deployment)
+        run: npm run build
+      - name: Verify prerendered deployable HTML and Vercel route mapping
+        run: node scripts/verify-ssg-build.cjs
+
+  browser-smoke:
+    name: Chromium desktop and mobile smoke tests
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+      - name: Install application dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Install test runner without modifying lockfile
+        run: npm install --no-save --package-lock=false --no-audit --no-fund @playwright/test@1.56.1 @axe-core/playwright@4.11.0
+      - name: Install Chromium and system dependencies
+        run: npx playwright install --with-deps chromium
+      - name: Build preview bundle
+        run: npm run build
+      - name: Run browser smoke tests
+        run: npx playwright test --config=playwright.config.cjs
+      - name: Upload desktop and mobile visual-review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-visual-review
+          path: visual-review/
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Verify route-specific HTML snapshots without JavaScript (proof of concept)
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4174 --strictPort > /tmp/portfolio-preview.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          for attempt in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4174/ -o /dev/null; then break; fi
+            sleep 1
+          done
+          PRERENDER_ORIGIN=http://127.0.0.1:4174 node scripts/prerender-proof.cjs
+          node scripts/verify-prerender-proof.cjs
+      - name: Upload prerender proof pages
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prerender-proof
+          path: prerender-proof/
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Install Lighthouse CI
+        run: npm install --global @lhci/cli@0.16.x
+      - name: Measure Lighthouse performance, accessibility, best practices and SEO
+        run: lhci autorun --config=lighthouserc.cjs
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: lhci-results/
+          if-no-files-found: ignore
+          retention-days: 14
+      - name: Upload traces and screenshots on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-smoke-diagnostics
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  audit-vercel-preview:
+    name: Audit explicitly provided Vercel preview URL
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.preview_url != '' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact commit
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Inspect preview raw HTML and noindex metadata (no deployment)
+        env:
+          PREVIEW_URL: ${{ inputs.preview_url }}
+        run: node scripts/audit-vercel-preview.mjs
